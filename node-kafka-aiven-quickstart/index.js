@@ -2,7 +2,7 @@ const Kafka = require('node-rdkafka');
 const yargs = require('yargs');
 
 //Usage
-//node index.js --host kafka-instance.aivencloud.com:13301  --key-path kafka-instance-service.key --cert-path kafka-instance-service.cert --ca-path kafka-instance-ca.pem
+//node index.js --host kafka-instance.aivencloud.com:port  --key-path kafka-instance-service.key --cert-path kafka-instance-service.cert --ca-path kafka-instance-ca.pem
 const argv = yargs
     .option('host', {
         description: 'Kafka host using host:port',
