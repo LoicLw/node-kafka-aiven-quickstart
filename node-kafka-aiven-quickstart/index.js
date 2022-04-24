@@ -37,7 +37,7 @@ if (!Kafka.features.includes('ssl')) {
 //Topic has to be created on Kafka instance
 TOPIC = 'iotSensors';
 
-let numEvents = 50;
+let numEvents = 10;
 
 //Generating random IoT data
 IoTData = []
@@ -69,11 +69,12 @@ function kafkaProduce(host, keyPath, certPath, caPath) {
         try {
             for (let idx = 1; idx < numEvents +1; ++idx) {
                 data = IoTData.pop()
+                key = JSON.stringify(data.sensorId).toString()
                 producer.produce(
                     TOPIC,  // topic to send the message to
                     null,  // partition, null for librdkafka default partitioner
                     new Buffer.from(JSON.stringify(data).toString()),  // value
-                    'sensorData',  // (optional) key
+                    key,  // (optional) key
                     Date.now()  // (optional) timestamp
                 );
                 producer.flush(2000);
