@@ -105,7 +105,7 @@ Messages are pushed to your Kafka instance. Amount of mock IoT messages can be m
 Messages are accessible from your Aiven console in `Services` > `Kafka instance name` > `Topics` > `Topic name` > `Messages` > `Fetch Messages`
 Messages can be in binary, JSON or ARVO format.
 
-![View Messages](public/screen_2022-04-23_at_15.12.11.png)
+![View Messages](public/screen_2022-04-24_at_20.53.52.png)
 
 
 <br>
